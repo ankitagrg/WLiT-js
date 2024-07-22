@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Display</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #displayText {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>Dynamic Text Display</h3>
+        <form id="Form">
+            <div class="mb-3">
+                <label for="textColorInput" class="form-label">Text Color:</label>
+                <input type="text" id="textColorInput" class="form-control" placeholder="Enter text color">
+            </div>
+            <div class="mb-3">
+                <label for="bgColorInput" class="form-label">Background Color:</label>
+                <input type="text" id="bgColorInput" class="form-control" placeholder="Enter background color">
+            </div>
+            <div class="mb-3">
+                <label for="contentInput" class="form-label">Content:</label>
+                <input type="text" id="contentInput" class="form-control" placeholder="Enter text content">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <div id="displayText"></div>
+        
+    </div>
+    <script>
+        document.getElementById('Form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const textColor = document.getElementById('textColorInput').value;
+            const bgColor = document.getElementById('bgColorInput').value;
+            const content = document.getElementById('contentInput').value;
+            const displayText = document.getElementById('displayText');
+            displayText.style.color = textColor;
+            displayText.style.backgroundColor = bgColor;
+            displayText.textContent = content;
+        });
+    </script>
+</body>
+</html>

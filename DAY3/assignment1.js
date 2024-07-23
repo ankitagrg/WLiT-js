@@ -32,4 +32,17 @@ sumOfNum(numbers).then((result) => {
 });
 
 
-// Await
+// Await function //
+async function sumOfFirstNNumbers(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+  
+  (async () => {
+    const result = await sumOfFirstNNumbers(4);
+    console.log("Sum of first 4 natural number is :", result); 
+  })();
+  
